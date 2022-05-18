@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>Overcurrent</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+        <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">       
+        <link rel="stylesheet" href="./styles/main.css">
+    </head>
+    <body>
+        
+        <div class="navbar">
+            <div class="container">
+                <img class="mobile-menu" id="mobile-cta" src="images/menu.svg" alt="Navigation Menu">
+                <nav>
+                    <img class="mobile-menu-exit" id="mobile-cta-exit" src="images/exit.svg" alt="Exit navigation menu" >
+                    <ul class="nav-menu">
+                        <li class="nav-item">
+                            <a class="nav-link nav-home" href="./index.html">Home</a>
+                          </li>
+                          <li class="nav-item">
+                            <a class="nav-link nav-contact" href="mailto:made.giri@mind.id">Contact</a>
+                          </li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+        
+        <div class="container calculator-title">\
+
+            <div class="title-div col-justify-content-center">
+                <h1 class="title-51">Overcurrent (50-51)</h1>
+                <p style="text-align: center;">ket: Perhitungan hanya untuk Inrush Trafo, karena short circuit bergantung thd titik fault dan SLD </p>
+                <p style="text-align: center;"> Gunakan titik (.) untuk desimal</p>
+            </div>
+
+            <div class="container container51">
+
+                <div class="row justify-content-center">
+                    <div class="col-4">
+                        <h2 class="voltage51">Tegangan (V)</h2>
+                    </div>
+                    <div class="col-4">
+                        <h2 class="imp51">Impedansi Belitan DC (Ohm)</h2>
+                    </div>
+                </div>
+
+                <div class="row justify-content-center input-row-51">
+                    <div class="col-4">
+                        <input type="number" class="form-control" placeholder="Tegangan" id="V51">
+                    </div>
+                    <div class="col-4">
+                        <input type="number" class="form-control" placeholder="Impedansi" id="R51">
+                    </div>
+                </div>
+
+                <div class="row justify-content-center relay51">
+                    <div class="col-4">
+                        <h2 class="set-relay">Set Relay (A)</h2>
+                    </div>
+                    <div class="col-4">
+                        <input type="number" class="form-control" placeholder="Set Relay" id="relay51">
+                    </div>
+                </div>
+                <div class="row justify-content-center button51">
+                    <div class="col-3">
+                        <input class="btn btn-success btn-block" id="hitung51" type="submit" value="Hitung">
+                    </div>
+                </div>
+
+                <hr>
+
+                <div class="row justify-content-center">
+                    <div class="col-4">
+                        <h2> Peak Inrush (A)</h2>
+                    </div>
+                    <div class="col-4">
+                        <h2>Status Relay</h2>
+                    </div>
+                </div>
+                <div class="row justify-content-center result-row">
+                    <div class="col-4">
+                        <h2 id="resultArus51">0</h2>
+                    </div>
+                    <div class="col-4">
+                        <h2 id="resultRelay51">OK</h2>
+                    </div>
+                </div>
+                <div class="row justify-content-center">
+                    <div class="col-3">
+                        <a type="button" class ="btn btn-secondary btn-amp btn-block" href="./teoriover.html"> Teori</a>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+        
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+        <script src="./script/overcurrent.js" async defer></script>
+    </body>
+    <footer class="container">
+        <div class="col-lg-12">
+            <p style="text-align: center;">Yudha Giri</p>
+        </div>
+      </footer>
+</html>

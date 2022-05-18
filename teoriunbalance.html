@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>Teori Unbalance</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+        <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">       
+        <link rel="stylesheet" href="./styles/main.css">
+    </head>
+    <body>
+        <div class="navbar">
+            <div class="container">
+                <img class="mobile-menu" id="mobile-cta" src="images/menu.svg" alt="Navigation Menu">
+                <nav>
+                    <img class="mobile-menu-exit" id="mobile-cta-exit" src="images/exit.svg" alt="Exit navigation menu" >
+                    <ul class="nav-menu">
+                        <li class="nav-item">
+                            <a class="nav-link nav-home" href="./index.html">Home</a>
+                          </li>
+                          <li class="nav-item">
+                            <a class="nav-link nav-contact" href="mailto:made.giri@mind.id">Contact</a>
+                          </li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="title-div col-justify-content-center">
+                    <p class="home-subtitle">MIND ID - ANTAM UBPNS</p>
+                    <h1 class="home-title"> Konsep Beban Tidak Seimbang</h1>
+            </div>
+        </div> 
+
+        <div class="container intro-teori">
+            <div class="col">
+                <h3 class="title-unbalance">Sistem dikatakan seimbang jika:</h3>
+                    <ol style="font-size: 100%">
+                        <li>Nilai arus fasa R, S, T besarnya sama</li>
+                        <li>Sudut antar fasa adalah 120 derajat</li>
+                    </ol>
+            </div>
+            <div class="col-justify-content-center">
+                <img src="./images/seimbang1.png" alt="" class="responsive-img img-unbalance">
+            </div>
+            <hr>
+
+            <div class="row simulasiSudut">
+                <div class="col-justify-content-center col-md-4 col-sm-12" style="margin-left: 2%; margin-right:0; padding-right: 5%;">
+                    <div class="row">
+                        <h3>Simulasi pengaruh perubahan sudut fasa</h3>
+                        <p>Sudut Fasa R</p>
+                        <input type="number" class="form-control" placeholder="sudut R" id="sudutR">
+                    </div>
+                    <div class="row">
+                        <p>Sudut Fasa S</p>
+                        <input type="number" class="form-control" placeholder="sudut S" id="sudutS">
+                    </div>
+                    <div class="row">
+                        <p>Sudut Fasa T</p>
+                        <input type="number" class="form-control" placeholder="sudut T" id="sudutT">
+                    </div>
+                    <div class="row">
+                        <input class="btn btn-success btn-block" id ="draw" value="Draw">
+                    </div>
+                </div>
+                <div class="col-justify-content-center col-md-7 col-sm-12">
+                    <div class="row">
+                    <div class="col">
+                        <h2>Grafik gelombang arus:</h2>
+                        <canvas id="canvasUb"></canvas>
+                    </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-12">
+                            <h2>Arus pada fasa netral (Ir + Is + It) </h2>
+                            <p><span id="resultArus">0</span>A</p>
+                            <p>Jika ada arus pada fasa netral, beban dikatakan tidak seimbang dan dapat menimbulkan
+                                panas berlebih (overheat) pada kabel maupun peralatan
+                            </p>
+                            
+                        </div>
+                    </div>
+                    
+                </div>
+                
+            </div>
+            <hr>
+            
+            <div class="container kirchoff" style="margin-left: -1.5%;">
+                           <h3>Hukum Kirchoff</h3>
+                           <p> <strong>Nilai arus yang masuk ke 1 titik = NIlai arus yang keluar dari titik tersebut</strong> </p>
+                           <p> <strong>Io = Ir + Is + It</strong></p>
+                           <div class="row">
+                                <div class="col-md-4 col-sm-12">
+                                    <img src="./images/seimbang2.png" class="responsive-img img-kirchoff">
+                                </div>
+                                <div class="col-md-8 col-sm-12">
+                                    <p>Asumsikan sudut fasa seimbang (berbeda 120 derajat antar fasa)</p>
+                                    <p>Seperti ditunjukkan pada grafik simulasi sudut fasa, pada beban seimbang (perbedaan sudut 120)
+                                        jika salah satu fasa mencapai titik maksimum I max, 2 fasa lainnya bernilai -I max/2
+                                    </p>
+                                    <p>Misal, ketika Ir = 1A, maka Is = -0,5 A dan It = -0,5 A</p>
+                                    <p>Is dan It negatif karena arahnya berlawanan dengan Ir</p>
+                                    <p>Sesuai Hukum Kirchoff, Io = Ir + Is + It = 1 + (-0,5) + (-0,5) = 0 A, 
+                                        Tidak ada arus yang mengalir pada fasa netral</p>
+                                </div>
+                           </div>
+                           <br>
+                           <h3>Simulasi pengaruh perbedaan daya beban</h3>
+                            <p><strong>Asumsi tegangan 220V, sudut fasa seimbang</strong></p>
+                           <div class="row">
+                               <div class="col-md-4 col-sm-12" style="margin-left: 2%; margin-right: 0;">
+                                   <div class="row">
+                                    <p>Daya Fasa R (W)</p>
+                                    <input type="number" class="form-control" placeholder="daya R" id="dayaR">
+                                   </div>
+                                   <div class="row">
+                                    <p>Daya Fasa R (S)</p>
+                                    <input type="number" class="form-control" placeholder="daya S" id="dayaS">
+                                   </div>
+                                   <div class="row">
+                                    <p>Daya Fasa R (T)</p>
+                                    <input type="number" class="form-control" placeholder="daya T" id="dayaT">
+                                   </div>
+                                   <div class="row">
+                                    <input class="btn btn-success btn-block" id ="hitungArus" value="Hitung">
+                                    </div>
+                               </div>
+                               <div class="col-md-7 col-sm-12 textSimulasiArus">
+                                   <p>Ir = <span id="wattR">0</span>W / 220 = <span id="curR">0</span> A</p>
+                                   <p>Is = <span id="wattS">0</span>W / 220 = <span id="curS">0</span> A</p>
+                                   <p>It = <span id="wattT">0</span>W / 220 = <span id="curT">0</span> A</p>
+                                   <p>Karena sudut fasa seimbang maka saat Ir berada pada nilai max, 
+                                      di waktu yang sama, Is dan It nilainya hanya setengah dan arahnya berlawanan dengan Ir</p>
+                                    <p><strong>Arus pada fasa netral:</strong></p>
+                                    <p>Io = Ir + (-Is) + (-It) </p>
+                                    <p>Io = <span id="curR2">0</span> A - <span id="curS2">0</span> A - <span id="curT2">0</span> A </p>
+                                    <p>Io = <span id="curNetral">0</span> A</p>
+                                    <p>Terlihat bahwa jika beban antar fasa tidak sama atau tidak seimbang, akan ada arus fasa netral yang menyebabkan relay aktif</p>
+                                </div>
+                           </div>
+            </div>
+            <hr>
+            <div class="container">
+                <h1>Beban Furnace Tidak Seimbang</h1>
+                <div class="row">
+                    <div class="col-md-4 col-sm-12">
+                        <img src="./images/esf.jpg" alt="" class="responsive-img img-esf">
+                    </div>
+                    <div class="col-md-8 col-sm-12">
+                        <p><strong>Arus Elektroda</strong></p>
+                        <ol style="font-size: 100%">
+                            <li>Furnace memiliki 3 elektroda</li>
+                            <li>Setiap elektroda membutuhkan arus yang besar untuk menimbulkan arc dan memanaskan calcine</li>
+                            <li>Pemanasan calcine akan memisahkan logam dari slag, dan mengubah wujud calcine dari padat menjadi cair</li>
+                            <li>Karena calcine dari RK tidak selalu seragam karakteristiknya, ada kemungkinan calcine yang terkena 
+                                elektroda A sudah mencair, sedangkan calcine elektroda B dan C belum</li>
+                            <li>Pada kondisi ini, elektroda A tidak lagi terkena calcine dan membutuhkan arus yang jauh lebih sedikit dibanding elektroda B dan C, sehingga terjadi unbalance</li>
+                            <li>Pada kasus lainnya, ketika calcine yang terkena salah satu elektroda sudah cair, elektroda tersebut 
+                                akan bersentuhan langsung dengan slag sehingga terjadi kenaikan arus dan unbalance</li>
+                            <li>Untuk mengatasi arus yang terlalu besar atau terlalu kecil, dapat dilakukan dengan mengatur posisi elektroda</li>
+                        </ol>
+                    </div>
+                </div>
+            </div>
+
+            <div class="container">
+                <h2>Efek beban tidak seimbang</h2>
+                <ol style="font-size: 100%">
+                    <li>Pada kabel dan switchgear: Adanya arus pada fasa netral (seharusnya 0)</li>
+                    <li>Pada generator: muncul medan magnet tambahan pada stator dengan arah putaran fasa berlawanan yang menghasilkan arus tambahan (negative phase)</li>
+                    <li>Ada induksi tambahan dan arus eddy, terjadi overheat</li>
+                </ol>
+            </div>
+            <hr>
+        </div>
+        
+
+
+      
+
+        <div class="container cont-rumus-ub">
+            <h1 style="text-align: center">Rumus Perhitungan</h1>
+            
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-6 col-sm-12">
+                        <h2>Unbalance</h2>
+                        <ol>
+                            <li><strong>Hitung arus rata-rata (I average) fasa R, S, dan T </strong> </li>
+                            <li><strong>Hitung nilai unbalance tiap fasa dengan cara:</strong>
+                                <br>fasa R = (Ir - I average)/I average
+                                <br>fasa S = (Is - I average)/I average
+                                <br>fasa T = (It - I average)/I average
+                            </li>
+                            <li><strong>Cari nilai terbesar diantara ketiga unbalance tiap fasa tersebut (Imax)</strong> </li>
+                            <li><strong>Hitung unbalance sistem dengan cara:
+                                <br>%UB = Imax*100</strong>
+                            </li>
+                            <li><strong>Untuk mengatasi unbalance, atur agar fasa dengan nilai unbalance terbesar tersebut nilainya mendekati 2 fasa lainnya</strong></li>
+                        </ol>
+                    </div>
+                    <div class="col-md-6 col-sm-12">
+                        <h3>Contoh Kasus 8 Maret 2022</h3>
+                        <div class="row">
+                            <div class="col-md-4 col-sm-12">
+                                <ul>
+                                    <li><strong>Arus R = 315 A</strong></li>
+                                    <li><strong>Arus S = 267 A</strong></li>
+                                    <li><strong>Arus T = 269 A</strong></li>
+                                    <li><strong>Average = 283,67 A</strong></li>
+                                </ul>
+                            </div>
+                            <div class="col-md-8 col-sm-12">
+                                <ul>
+                                    <li><strong>Ub R = (315-283,67)/283,67 = 0,11 </strong></li>
+                                    <li><strong>Ub S = (267-283,67)/283,67 = 0,058 </strong></li>
+                                    <li><strong>Ub T = (269-283,67)/283,67 = 0,051 </strong></li>
+                                    <li><strong>Ub Terbesar = 0,11</strong></li>
+                                    <li><strong>%UB = 0,11 * 100 = 11% </strong></li>
+                                    <li><strong>Arus UB = 0,11 * 283,67 = 31,3A </strong></li>
+                                    <li><strong>Karena set relay 46 pada Switchgear 11kV PLTU adalah 10%, 
+                                        maka saat ada unbalance 11% akan terjadi trip</strong></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+            </div>
+            <hr>
+            
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-6 col-sm-12">
+                        <h2>NPS</h2>
+                    <ol>
+                        <li><strong>Bagi nilai arus tiap fasa dengan arus nominal (FLA):</strong>
+                            <br>%fasa R = Ir / I FLA*100;
+                            <br>%fasa S = Is / I FLA*100;
+                            <br>%fasa T = It / I FLA*100;
+                        </li>
+                        <li><strong>Kurangi nilai terbesar dan terkecil hasil perhitungan poin 1 (Imax-Imin)</strong></li>
+                        <li><strong>Cari NPS sistem dengan cara:
+                            <br>%NPS = (Imax-Imin)/3</strong>
+                        </li>
+                        <li><strong>Untuk mengatasi NPS, atur elektroda atau beban agar perbedaan nilai arus tiap fasa tidak besar</strong></li>    
+                    </ol>
+                    </div>
+                    <div class="col-lg-6 col-sm-12">
+                        <h3>Contoh Kasus 6 Sept 2021</h3>
+                        <div class="row">
+                            <div class="col-md-4 col-sm-12">
+                                <ul>
+                                    <li><strong>Arus R = 942,43 A</strong></li>
+                                    <li><strong>Arus S = 1111,41 A</strong></li>
+                                    <li><strong>Arus T = 1468,9 A</strong></li>
+                                    <li><strong>FLA = 1969 A</strong></li>
+                                </ul>
+                            </div>
+                            <div class="col-md-8 col-sm-12">
+                                <ul>
+                                    <li><strong>R / FLA= 47,86%</strong></li>
+                                    <li><strong>S / FLA= 56,44%</strong></li>
+                                    <li><strong>T /FLA= 74,6%</strong></li>
+                                    <li><strong>Max - Min= 26,73%</strong></li>
+                                    <li><strong>NPS = Max-Min/3 = 8,9%</strong></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <hr>
+            
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-6 col-sm-12">
+                        <h2>Earth Fault</h2>
+                    <ol>
+                        <li><strong>Cari data arus dan sudut fasa R, S, dan T</strong></li>
+                        <li><strong>Hitung komponen real tiap fasa dengan cara: </strong>
+                            <br> Ir = Arus R * cos(Sudut Fasa R * 3,14 /180)
+                            <br> Is = Arus S * cos(Sudut Fasa S * 3,14 /180)
+                            <br> It = Arus T * cos(Sudut Fasa T * 3,14 /180)
+                         </li>
+                        <li><strong>Hitung arus yang mengalir ke ground dengan menjumlahkan semua komponen real:
+                            <br>Io = Ir + Is + It </strong>
+                        </li>    
+                    </ol>
+                    </div>
+                    <div class="col-lg-6 col-sm-12">
+                        <h3>Contoh Kasus 8 Maret 2021</h3>
+                        <div class="row">
+                            <div class="col-md-4 col-sm-12">
+                                <ul>
+                                    <li><strong>Arus R = 315 A</strong></li>
+                                    <li><strong>Sudut R = 0 deg</strong></li>
+                                    <li><strong>Arus S = 267 A</strong></li>
+                                    <li><strong>Sudut S = -120 deg</strong></li>
+                                    <li><strong>Arus T = 269 A</strong></li>
+                                    <li><strong>Sudut S = 120 deg</strong></li>
+                                </ul>
+                            </div>
+                            <div class="col-md-8 col-sm-12">
+                                <ul>
+                                    <li><strong>Ir = 315 * cos(0*3,14*180) = 315</strong></li>
+                                    <li><strong>Is = 267 * cos(-120*3,14*180) = -133,5</strong></li>
+                                    <li><strong>It = 269 * cos(120*3,14*180) = -134,5</strong></li>
+                                    <li><strong>Io = 315 - 133,5 - 134,5 = 47 A</strong></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+        
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+        <script src="./script/teoriub.js" async defer></script>
+        
+    </body>
+   
+    
+</html>

@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>Teori Frequency</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+        <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">       
+        <link rel="stylesheet" href="./styles/main.css">
+    </head>
+    <body>
+        <div class="navbar">
+            <div class="container">
+                <img class="mobile-menu" id="mobile-cta" src="images/menu.svg" alt="Navigation Menu">
+                <nav>
+                    <img class="mobile-menu-exit" id="mobile-cta-exit" src="images/exit.svg" alt="Exit navigation menu" >
+                    <ul class="nav-menu">
+                        <li class="nav-item">
+                            <a class="nav-link nav-home" href="./index.html">Home</a>
+                          </li>
+                          <li class="nav-item">
+                            <a class="nav-link nav-contact" href="mailto:made.giri@mind.id">Contact</a>
+                          </li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="title-div col-justify-content-center">
+                    <p class="home-subtitle">MIND ID - ANTAM UBPNS</p>
+                    <h1 class="home-title">Over-Under Frequency</h1>
+            </div>
+        </div> 
+
+        <div class="container intro-teori">
+            <div class="col">
+                <h3 class="title-unbalance">Frekuensi Listrik</h3>
+                    <ol style="font-size: 100%">
+                        <li>Menyatakan berapa kali arus atau tegangan AC berbalik arah dalam 1 detik</li>
+                        <li>Misal, terjadi 50x pergantian arah arus dalam 1 detik, maka frekuensinya 50Hz</li>
+                        
+                    </ol>
+            </div>
+            <div class="row">
+                <div class="col-md-4 col-sm-12" style="margin-left: 2%; margin-right:0; padding-right: 5%;">
+                    <h3>Perubahan Gelombang Arus AC thd Frekuensi</h3>
+                    <div class="row">
+                        <div class="col">
+                            <p>Frekuensi</p>
+                            <input type="number" class="form-control" placeholder="frekuensi" id="frekuensi">
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col">
+                            <input class="btn btn-success btn-block" id ="draw" value="Draw">
+                        </div>
+                    </div>
+                </div>
+                <div class="col-justify-content-center col-md-7 col-sm-12">
+                    <div class="row">
+                    <div class="col">
+                        <h2>Grafik gelombang arus:</h2>
+                        <canvas id="canvasUb"></canvas>
+                    </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-12">
+                            <p>Semakin besar frekuensi, semakin banyak gelombang, atau semakin sering terjadi 
+                                perubahan arah aliran arus </p>
+                            
+                        </div>
+                    </div>
+                    
+                </div>
+                
+            </div>
+            <hr>
+            
+            <div class="container" style="margin-left: -1.5%;">
+                           <h3>Rumus Frekuensi</h3>
+                           <div class="row">
+                                <div class="col-md-4 col-sm-12 col-justify-content-center">
+                                    <img src="./images/frek.png" class="responsive-img img-frek">
+                                </div>
+                                <div class="col-md-4 col-sm-12">
+                                    <p>f = Frekuensi (Hz)</p>
+                                    <p>N = Kecepatan sinkron rotor (rpm)</p>
+                                    <p>P = Jumlah kutub (pole) generator</p>
+                                </div>
+                                <div class="col-md-4 col-sm-12">
+                                    <p>Misal, generator CFPP unit 1</p>
+                                    <p>N = 1500 rpm</p>
+                                    <p>P = 4 pole</p>
+                                    <p>f = (1500*4)/120 = 50 Hz</p>
+                                    <p>Artinya, dalam keadaan normal CFPP unit 1 menyuplai arus AC yang berbalik arah 50x dalam 1 detik</p>
+                                </div>
+                           </div>
+            </div>
+            <hr>
+            <div class="container">
+                <div class="row">
+                    <h3>Over dan Under frequency</h3>
+                    <div class="col-sm-12">
+                        <img src="./images/overfreq.png" alt="" class="responsive-img">
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col">
+                        <p><strong>Terdapat 2 jenis gangguan, yaitu Over freuqency dan Under frequency</strong></p>
+                        <p>Over frequency = frekuensi melebihi batas maksimal, terjadi ketika beban turun</p>
+                        <p>Under frequency = frekuensi kurang dari batas minimal, terjadi ketika beban naik</p>
+                        <p>Seperti ditunjukkan pada gambar diatas, ketika frekuensi melebihi batas (52Hz pada CFPP), maka relay akan aktif
+                            sehingga terjadi trip pada generator
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="container">
+                    <div class="row">
+                        <div class="col-md-6 com-sm-12">
+                            <h5>Over frequency</h5>
+                            <ol style="font-size: 100%">
+                                <li>Saat beban sistem turun (karena furnace trip atau faktor lain), energi yang dibutuhkan untuk
+                                    memutar rotor menjadi semakin rendah</li>
+                                <li>Akibatnya, rotor menjadi lebih ringan dan mudah berputar</li>
+                                <li>Rotor akan berputar semakin cepat</li>
+                                <li>Dengan rumus frekuensi diatas, jika kecepatan (N) naik, maka f juga akan meningkat</li>
+                            </ol>
+                           
+                            <p>Over frequency sering terjadi saat furnace trip atau kebutuhan arus pada elektroda
+                                furnace berkurang, sehingga beban turun dari jumlah besar ke 0 MW</p>
+                        </div>
+                        <div class="col-md-6 com-sm-12">
+                            <h5>Under frequency</h5>
+                            <ol style="font-size: 100%">
+                                <li>Saat beban sistem naik (karena furnace dinyalakan atau faktor lain), energi yang dibutuhkan untuk
+                                    memutar rotor menjadi semakin besar</li>
+                                    <li>Akibatnya, rotor menjadi lebih berat dan sulit berputar</li>
+                                    <li>Rotor akan berputar semakin lambat</li>
+                                <li>Dengan rumus frekuensi diatas, jika kecepatan (N) turun, maka f juga akan menurun</li>
+                            </ol>
+                            <p>Under frequency sering terjadi saat furnace baru dinyalakan atau kebutuhan arus pada elektroda
+                                furnace meningkat
+                            </p>
+                        </div>
+                    </div>
+    
+            </div>
+          
+            <hr>
+        </div>
+        
+
+
+        <div class="container cont-rumus-ub">
+            <h2  class="home-title">Relay Frekuensi</h2>
+            
+            <div class="container">
+                <div class="row">
+                    <div class="col-sm-12">
+                        <img src="./images/curvegencfpp.png" alt="" class="responsive-img img-kurva">
+                        <ul style="list-style-type: circle">
+                            <li>Setiap generator memiliki kurva karakteristik tegangan-frekuensi masing-masing</li>
+                            <li>Gambar berikut adalah kurva generator CFPP berdasarkan dokumen Sumitomo</li>
+                            <li>Sumbu y adalah tegangan dalam satuan pu, dan sumbu x adalah frekuensi dalam satuan pu</li>
+                            <li>Untuk mengubah frekuensi menjadi satuan Hz, kalikan dengan frekuensi nominal yaitu 50Hz. Misal, 1.02 pu berarti
+                                1.02 x 50 = 51Hz
+                            </li>
+                            <li>Untuk mengubah tegangan menjadi satuan kV, kalikan dengan tegangan nominal yaitu 11kV. Misal, 1.02 pu 
+                                berarti 1.02 x 11 = 11.22kV
+                            </li>
+                            <li>Generator CFPP memiliki 4 zona. 
+                                <ul style="list-style-type:square">
+                                 <li>Zona A untuk operasi normal dan kontinyu</li>
+                                 <li>Zona B apabila frekuensi naik ke 1.03 pu (51.5Hz), dan boleh beroperasi selama maksimal 5 menit</li>
+                                 <li>Zona C apabila frekuensi naik ke 1.04 pu (52Hz), dan boleh beroperasi selama maksimal 2 menit</li>
+                                 <li>Zona D bila frekuensi melebihi 1.04pu (>52Hz), dan harus segera dilakukan trip oleh relay maksimal 3 detik setelah kejadian</li>
+                                <li>Untuk sisi under frequencynya, hanya terdapat 1 zona dengan batas minimal 0.95 pu (47.5Hz). Dibawah ini, harus dilakukan trip</li>
+                                </ul></li>
+                            <li>Proteksi untuk over frequency lebih ketat dari under frequency, karena apabila rotor berputar diatas kecepatan sinkron dalam waktu yang lama,
+                                dapat menimbulkan panas berlebih dan kerusakan mekanikal lainnya
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+             
+                
+            </div>
+            <hr>
+        </div>
+      
+
+        <div class="container cont-rumus-ub">
+            <h2  class="home-title">Mengatasi Perubahan Frekuensi</h2>
+            
+            <div class="container">
+                <div class="row">
+                    <div class="col-sm-12">
+                        <h2>Inersia</h2>
+                        <img src="./images/inertia2.png" alt="" class="responsive-img img-inertia">
+                        <ul style="list-style-type: circle">
+                            <li>Dalam kelistrikan, terdapat istilah inersia (H)</li>
+                            <li>Inersia menyatakan waktu yang dibutuhkan untuk mengubah kecepatan putar rotor</li>
+                            <li>Semakin besar inersia, waktu yang dibutuhkan untuk mengubah kecepatan rotor
+                                semakin lama
+                            </li>
+                            <li>Seperti terlihat pada gambar, semakin besar inertia (H), maka dalam waktu yang sama (misal 10 detik),
+                                perubahan frekuensi semakin landai
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-sm-12">
+                        <img src="./images/inertia.png" alt="" class="responsive-img img-inertia">
+                        <ul style="list-style-type: circle">
+                            <li>Pada gambar, inersia diibaratkan sebagai per/spring yang menahan perubahan frekuensi generator</li>
+                            <li>Semakin besar inersia, maka semakin besar kemampuan per untuk mempertahanakan posisi eksisting</li>
+                            <li>Misalnya saat frekuensi beban meningkat karena penurunan beban,frekuensi generator akan naik, maka per akan menarik generator untuk kembali ke posisi awal, dan sebaliknya</li>
+                        </ul>
+                    </div>
+                </div>
+
+                
+            </div>
+
+            
+
+        </div>
+        
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+        <script src="./script/teorifreq.js" async defer></script>
+        
+    </body>
+
+    
+</html>

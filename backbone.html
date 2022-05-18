@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>Modifikasi Backbone</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+        <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">       
+        <link rel="stylesheet" href="./styles/main.css">
+    </head>
+    <body>
+        <div class="navbar">
+            <div class="container">
+                <img class="mobile-menu" id="mobile-cta" src="images/menu.svg" alt="Navigation Menu">
+                <nav>
+                    <img class="mobile-menu-exit" id="mobile-cta-exit" src="images/exit.svg" alt="Exit navigation menu" >
+                    <ul class="nav-menu">
+                        <li class="nav-item">
+                            <a class="nav-link nav-home" href="./index.html">Home</a>
+                          </li>
+                          <li class="nav-item">
+                            <a class="nav-link nav-contact" href="mailto:made.giri@mind.id">Contact</a>
+                          </li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="title-div col-justify-content-center">
+                    <p class="home-subtitle">MIND ID - ANTAM UBPNS</p>
+                    <h1 class="home-title">Modifikasi Backbone</h1>
+            </div>
+        </div> 
+
+        <div class="container intro-teori">
+
+            <div class="container">
+                <div class="row">
+                    <div class="col">
+                        <h3 class="title-unbalance">Konfigurasi Eksisting</h3>
+                    </div>
+                </div>
+
+                <div class="row">
+                    
+                    <div class="col-md-5 col-sm-12" style="margin-left: 2%; margin-right:0; padding-right: 5%;">
+                      <img src="./images/eksisting.png" alt="" class="responsive-img img-bb">
+                    </div>
+
+                    <div class="col-md-6 col-sm-12">
+                        <div class="row">
+                            <div class="col">
+                                <h5>Keterangan:</h5>
+                                <ol style="font-size: 100%; list-style-type: circle;"> 
+                                    <li>DPP beroperasi maksimal 6 unit</li>
+                                    <li>Seluruh bus DPP saling terhubung dan sinkron pada bus DPP 11kV</li>
+                                    <li>PLTU beroperasi dengan unit 1</li>
+                                    <li>PLTU dan PLTD sinkron pada Backbone Bus A (Furnace 2)</li>
+                                    <li>Seluruh bus Backbone tidak saling terhubung</li>
+                                </ol>
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="col">
+                                <h5>Permasalahan yang muncul:</h5>
+                                <ol style="font-size: 100%; list-style-type: circle;"> 
+                                    <li>Arus hubung singkat pada Bus 11kV DPP (66kA) melebihi kapasitas maksimal (50kA)</li>
+                                    <li>Inersia rendah pada CFPP sehingga rawan terjadi overfrequency</li>
+                                    <li>NPS tinggi pada CFPP sehingga rawan trip jika terjadi unbalance pada furnace</li>
+                                    <li>Karena frekuensi trip yang tinggi pada CFPP, daya rata-rata PLTU tidak mencapai daya 
+                                        yang ditetapkan oleh load setter</li>
+                                </ol>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <hr>
+            
+            <div class="container" style="margin-left: -1.5%;">
+                <h1 class="home-title">Problem Solving</h1>
+                <div class="col">
+                    <h3>Inersia Rendah CFPP</h3>
+                    <p>Teori inersia dapat dilihat di <a href="./overfrequency.html">sini</a></p>
+                </div>
+                <div class="row">
+                    <div class="col-md-5 col-sm-12">
+                        <img src="./images/coinow.png" alt="" class="responsive-img">
+                    </div>
+                    <div class="col-md-6 col-sm-12">
+                        <h5>Penyebab:</h5>
+                        <ol style="font-size: 100%;"> 
+                            <li>Inersia dialirkan searah dengan aliran arus, dan membentuk pusat inersia (COI) 
+                                pada titik pertemuan inersia setiap generator  </li>
+                            <li>Inersia setiap generator DPP saling bertemu pada bus 11kV DPP sehingga terbentuk COI DPP (COI 2)
+                                dengan total inersia = <strong> 6 x inersia masing-masing unit DPP</strong> </li>
+                            <li>Inersia CFPP bertemu dengan inersia DPP pada backbone 30kV Bus A, membentuk COI CFPP-DPP (COI 1)
+                                dengan total inersia = <strong>inersia CFPP + inersia DPP menuju Backbone Bus A</strong></li>
+                            <li>Inersia pada COI 1 lebih kecil dari inersia pada COI 2, sehingga generator CFPP lebih 'ringan' dari 
+                                generator DPP dan lebih mudah berubah frekuensinya jika terjadi gangguan pada furnace </li>
+                        </ol>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-5 col-sm-12">
+                        <img src="./images/coinew.png" alt="" class="responsive-img">
+                    </div>
+                    <div class="col-md-6 col-sm-12">
+                        <h5>Opsi Solusi:</h5>
+                        <ol style="font-size: 100%;"> 
+                            <li>Menyatukan titik temu seluruh inersia dengan cara menghubungkan seluruh bus pada Backbone
+                                dan memisahkan bus 11kV DPP menjadi 2 bus atau lebih (lihat gambar)</li>
+                            <li>Dengan demikian, tidak terjadi pertemuan seluruh inersia DPP pada bus 11kV. Inersia 
+                                DPP akan dialirkan menuju Backbone dan bertemu dengan inersia CFPP, membentuk 1 COI </li>
+                            <li>Total inersia pada Backbone = <strong>inersia CFPP + inersia DPP bus A + 
+                                inersia DPP bus B + inersia DPP bus C</strong> </li>
+                            <li>Inersia CFPP akan lebih besar dari inersia konfigurasi eksisting, sehingga generator lebih 
+                                'berat' dan perubahan frekuensi saat terjadi gangguan pada furnace lebih rendah
+                            </li>
+                        </ol>   
+                    </div>
+                </div>
+
+                <hr>
+
+                <div class="col">
+                    <h3>Arus NPS tinggi CFPP</h3>
+                    <p>Teori NPS dapat dilihat di <a href="./teoriunbalance.html">sini</a></p>
+                </div>
+                <div class="row">
+                    <div class="col-md-5 col-sm-12">
+                        <img src="./images/npsnow.png" alt="" class="responsive-img">
+                    </div>
+                    <div class="col-md-6 col-sm-12">
+                        <h5>Penyebab:</h5>
+                        <ol style="font-size: 100%;"> 
+                            <li>Nilai arus NPS sangat dipengaruhi oleh distribusi beban</li>
+                            <li>Semakin sedikit generator pada sistem, semakin besar arus NPS yang harus ditanggung oleh masing-masing generator</li>
+                            <li>Selain itu, jika generator hanya menanggung 1 beban, maka jika ada unbalance pada beban tersebut arus NPS 
+                                yang akan muncul juga besar. Sedangkan jika generator menanggung beban lebih banyak, misalnya 3 beban dengan daya sama dan salah
+                                satunya mengalami unbalance, arus nps hanya 1/3</li>
+                            <li>Perhatikan gambar. Karena CFPP hanya terhubung dengan ESF2, jika terjadi unbalance pada ESF2 maka 100% 
+                                arus CFPP (I) adalah arus dengan unbalance. NPS pada CFPP akan tinggi</li>
+                        </ol>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-5 col-sm-12">
+                        <img src="./images/npsnew.png" alt="" class="responsive-img">
+                    </div>
+                    <div class="col-md-6 col-sm-12">
+                        <h5>Opsi Solusi:</h5>
+                        <ol style="font-size: 100%;"> 
+                            <li>Menghubungkan CFPP dengan seluruh ESF sehingga distrubusi beban lebih merata</li>
+                            <li>Perhatikan gambar. Jika CFPP terhubung dengan ESF2 dan ESF3, saat terjadi unbalance pada ESF2 sedangkan ESF3
+                                dalam kondisi normal maka arus unbalance yang dialirkan oleh CFPP adalah sebesar (I-ESF3), lebih rendah dari eksisting
+                            </li>
+                            </ol>   
+                    </div>
+                </div>
+               
+
+                <hr>
+                <div class="col">
+                    <h3>Isu Hubung Singkat DPP</h3>
+                    <p>Teori overcurrent dapat dilihat di <a href="./teoriover.html">sini</a></p>
+                </div>
+                
+                <div class="row">
+                    <div class="col-md-6 col-sm-12">
+                        <h5>Penyebab:</h5>
+                        <ul style="font-size: 100%; list-style-type: circle;"> 
+                            <li>Setiap engine yang beroperasi menimbulkan arus hubung singkat 5.74kA</li>
+                            <li>Karena bus A, bus B, dan bus C DPP saling terhubung maka terhitung sebagai 1 bus,
+                                namun kapasitas hubung singkatnya tidak bertambah karena ukuran busbar tetap
+                            </li>
+                            <li>Sehingga, jika terjadi hubung singkat maka busbar terkena arus hubung singkat dari seluruh engine yang 
+                                beroperasi dan dari trafo menuju furnace
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="col-md-6 col-sm-12">
+                        <h5>Opsi Solusi:</h5>
+                        <ul style="font-size: 100%; list-style-type: circle;"> 
+                            <li>Memisahkan Bus DPP menjadi 2 bus sehingga tidak menjadi 1 bus yang terkena aliran 
+                                arus hubung singkat dari seluruh unit</li>
+                            <li>Mengoperasikan hanya 5 unit dalam waktu bersamaan</li>
+                            <li>Mengatur agar proteksi over current BAB901 dan BAB902 menggunakan kurva definite time</li>
+                            <li>Memasang IS limter pada BAO902, BAO905, dan BAO912</li>
+                    </div>
+                </div>
+            </div>
+            <hr>
+
+            <div class="container">
+                <h1 class="home-title">Trial Solusi</h1>
+
+                <div class="col">
+                    <h3>Trial Skenario A (Dengan Unit 2 CFPP)</h3>
+                </div>
+
+                <div class="row">
+                    <div class="col-md-5 col-sm-12">
+                        <img src="./images/skenarioA.png" alt="" class="responsive-img">
+                    </div>
+                    <div class="col-md-6 col-sm-12">
+                        <h5>Hasil:</h5>
+                        <ol style="font-size: 100%;"> 
+                            <li>Inersia CFPP lebih tinggi dari eksisting <br>
+                                (eksisting: 2-2,9s; skenario A: 3,6s)  </li>
+                            <li>NPS dalam kondisi normal lebih rendah dari eksisting <br>
+                                (eksisting: 3,79%; skenario A: 1,3%)</li>
+                            <li>Karena inersia lebih tinggi, rotor generator CFPP lebih 'berat' dan perubahan frekuensi
+                                lebih rendah sehingga tidak terjadi over frequency
+                            </li>
+                            <li>Karena NPS lebih rendah, maka saat terjadi unbalance pada furnace risiko kenaikan NPS hingga 
+                                melebihi 8% lebih rendah, sehingga tidak terjadi trip akibat relay NPS
+                            </li>
+                            <li>Selama percobaan 31 Maret - 8 April 2022, hanya terjadi 1x trip CFPP walaupun terjadi 49x trip furnace</li>
+                            <li>Daya rata-rata CFPP mencapai 24MW pada 3 april 2022</li>
+                            <li>Trial dihentikan pada 8 April 2022 terkait isu kapasitas daya kabel BAO904 yang tidak dapat melebihi 21MW</li>
+                        </ol>
+                    </div>
+                </div>
+
+                <div class="col">
+                    <h3>Trial Skenario 2 (Dengan Unit 1 CFPP)</h3>
+                </div>
+
+                 <div class="row">
+                        <div class="col-md-5 col-sm-12">
+                            <img src="./images/skenario2.png" alt="" class="responsive-img">
+                        </div>
+                        <div class="col-md-6 col-sm-12">
+                            <h5>Hasil:</h5>
+                            <ol style="font-size: 100%;"> 
+                                <li>Inersia CFPP lebih tinggi dari eksisting dan skenario A <br>
+                                    (eksisting: 2-2,9s; skenario A: 3,6s; skenario 2: 5,5-6s)  </li>
+                                <li>NPS dalam kondisi normal lebih rendah dari eksisting dan skenario A <br>
+                                    (eksisting: 3,79%; skenario A: 1,3%; skenario 2: 0,4%)</li>
+                                <li>Karena inersia lebih tinggi, rotor generator CFPP lebih 'berat' dan perubahan frekuensi
+                                    lebih rendah sehingga tidak terjadi over frequency
+                                </li>
+                                <li>Karena NPS lebih rendah, maka saat terjadi unbalance pada furnace risiko kenaikan NPS hingga 
+                                    melebihi 8% lebih rendah, sehingga tidak terjadi trip akibat relay NPS
+                                </li>
+                                <li>Selama percobaan 10-11 Mei 2022 pukul 07:00 tidak terjadi trip CFPP walaupun terjadi trip ESF3 dan ESF4 masing-masing 1x</li>
+                                <li>Trial baru berjalan 16 jam dan dihentikan sementara karena isu overload pada unit DPP</li>
+                            </ol>   
+                        </div>
+                    </div>
+                </div>
+            </div>
+           
+
+            
+
+        </div>
+        
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+        <script src="./script/tbackbone.js" async defer></script>
+        
+    </body>
+
+</html>

@@ -1,0 +1,482 @@
+:root{
+    --primary-color: #125B50;
+    --secondary-color: #F8B400;
+    --third-color: #383838;
+    --fourth-color: #f05945;
+    --bg-color: #fdfdfd;
+}
+
+body{
+    background-color: var(--bg-color);
+    font-family: 'Roboto', sans-serif;
+}
+
+.navbar{
+    background: var(--third-color);
+    padding: 1em;
+    /* width: 95%; */
+
+    a{
+        text-decoration: none;
+    }
+
+    nav{
+        display: none;
+    }
+
+    .container{
+        display: flex;
+        justify-content: space-between;
+    }
+
+    .mobile-menu{
+        cursor: pointer;
+    }
+}
+
+
+ul{
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    text-align: justify;
+}
+
+ol{
+    text-align: justify;
+}
+
+p{
+    text-align: justify;
+}
+
+
+h1{
+    font: 'Roboto';
+    font-weight: 800;
+    text-align: center;
+}
+
+
+
+h3{
+    font-weight: 500;
+}
+
+.row{
+    margin-bottom: 1%;
+}
+
+.title-div{
+    justify-content: center;
+    margin: 5% auto 0% auto;
+
+    .home-subtitle{
+        text-align: center;
+        font-size: 100%;
+        font-weight: 400;
+        margin-bottom: 0;
+    }
+    
+    .home-title{
+        font-size: 150%;
+        padding: 1%;
+    }
+}
+
+.calculator-title{
+    h1{
+        font-size: 150%;
+    }
+
+    h2{
+        font-size: 70%;
+        text-align: center;
+    }
+
+    p{
+        font-size: 100%;
+        width: 75%;
+        text-align: center;
+        margin: auto;
+        margin-bottom: 1%;
+    }
+
+    .phase-name{
+        padding-top: 20%;
+        text-align: right;
+    }
+
+    .voltage51{
+        padding-top: 20%;
+    }
+
+    .tr-side{
+        font-size: 60%;
+    }
+
+    .set-relay{
+        text-align: right;
+    }
+
+    .relay51{
+        .set-relay{
+            padding-top: 10%;
+        }
+    }
+
+    .row-CT87{
+        padding-bottom: 2%;
+    }
+}
+
+.result-row{
+    text-align: center;
+}
+
+
+.table-home{
+    margin-top: 0%;
+    margin-left: auto;
+    margin-right: auto;
+    column-gap: 45px;
+
+    .home-table-row{
+        padding: 0% 0 0 0%;
+    }
+}
+
+.form-control::placeholder{
+    font-size: 50%;
+    margin: 0;
+    padding: 0;
+}
+
+.btn { 
+    padding-right: auto;
+    padding-left: auto;
+    font-size: 75%;
+    text-align: center;
+}
+
+.btn-primary{
+    background-color: var(--primary-color);
+    border-color: var(--primary-color);
+    font-weight: 500;
+    font-size: 150%;
+    margin: 1% 3% 3% 1%;
+    border-radius:25px;
+}
+
+.btn-primary:hover{
+    background-color: var(--secondary-color);
+    border-color: var(--secondary-color);
+}
+
+.btn-success{
+    border-radius: 25px;
+    font-weight: 500;
+    background-color: var(--secondary-color);
+    border-color: var(--secondary-color);
+}
+
+.btn-success:hover{
+    background-color: var(--primary-color);
+    border-color: var(--primary-color);
+}
+
+.btn-secondary{
+    border-radius: 25px;
+    font-weight: 500;
+    background-color: var(--primary-color);
+    border-color: var(--primary-color);
+}
+
+.btn-secondary:hover{
+    background-color: var(--third-color);
+    border-color: var(--third-color);
+}
+
+
+.input-row-50N{
+    margin: 1% 0 1% 0;
+}
+
+footer{
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    margin: 0 auto 0 auto;
+    text-align: center;
+}
+
+nav.menu-btn{
+    display: block;
+}
+
+nav{
+    position: fixed;
+    z-index: 999;
+    width: 66%;
+    right: 0;
+    top: 0;
+    background: var(--third-color);
+    height: 100vh;
+    padding: 1em;
+    
+.nav-menu{
+    margin-top: 5em;
+
+    .git{
+        width: auto;
+        height: 30px;
+    }
+
+    a{
+        display: block;
+        color: var(--secondary-color);
+        font-size: 1em;
+        padding: .5em;
+        cursor: pointer;
+        text-align: right;
+
+        &:hover{
+            font-weight: bold;
+            color: var(--purple-color);
+        }
+    }
+}
+.mobile-menu-exit{
+    float: right;
+    margin: .5em;
+    cursor: pointer;
+}
+}
+
+.intro-teori{
+
+    ol{
+        font-size: 100%;
+    }
+
+    
+}
+.responsive-img{
+    max-width: 100%;
+}
+
+.img-unbalance{
+    display: block;
+    height: 200px;
+    margin: auto;
+    margin-bottom: 3%;
+}
+
+.img-sc{
+    display: block;
+    max-width: 30%;
+    margin: auto;
+}
+
+.img-kirchoff{
+    max-height: 300px;
+    // float:left;
+}
+
+.img-esf{
+    max-height: 300px;
+}
+
+.kirchoff{
+    margin-bottom: 5%;
+}
+
+.img-kir-trafo{
+    max-height: 150px;
+    display: block;
+    margin: auto;
+}
+
+.img-inrush{
+    max-width: 80%;
+}
+
+.img-frek{
+    max-width: 30%;
+    height: auto;
+    margin:2% 4% 2% 4%;
+}
+
+.img-inertia{
+    
+    max-width: 80%;
+    margin:2% 4% 2% 4%;
+}
+
+.img-kurva{
+    
+    max-width: 50%;
+    margin:2% 4% 2% 4%;
+}
+
+canvas{
+    width: 100%;
+}
+
+.textSimulasiArus{
+    margin: 5% auto 1% auto;
+    p{
+        margin-bottom: 0.5%;
+    }
+}
+
+
+
+
+
+@media only screen and (min-width:768px){
+
+
+
+    .mobile-menu, .mobile-menu-exit{
+        display: none;
+    }
+
+    .navbar .container{
+        display: grid;
+        grid-template-columns: 180px auto;
+        justify-content: unset;
+        
+    }
+
+    .navbar nav{
+        display: flex;
+        justify-content: space-between;
+        background: none;
+        position: unset;
+        height: auto;
+        width: 100%;
+        padding: 0;
+    
+        .git{
+            margin-top: -.3em;
+            width: auto;
+            height: 30px;
+        }
+
+        ul{
+            display: flex;
+        }
+
+        .nav-menu{
+            top: -5em;
+            position: absolute;
+            right: 1.5em;
+        }
+
+        a{
+            font-size: 1em;
+            padding: .1em 1em;
+            cursor: pointer;
+        }
+    }
+    
+    .btn-primary{
+        margin: 15% 3% 3% 1%;
+    }
+
+    
+    .title-div{
+        .home-title{
+        font-size: 300%;
+        }
+    }
+
+        
+    .calculator-title{
+        h1{
+            font-size: 250%;
+        }
+
+        h2{
+            font-size: 100%;
+        }
+
+        .phase-name{
+            padding-top: 5%;
+        }
+
+        .voltage51{
+            padding-top: 5%;
+        }
+
+        .tr-side{
+            font-size: 100%;
+        }
+
+        .set-relay{
+            text-align: right;
+            padding-top: 5%;
+        }
+
+        .relay51{
+            .set-relay{
+                padding-top:5%;
+                padding-right:2%;
+            }
+        }
+
+        .row-CT87{
+            padding-bottom: 2%;
+        }
+
+        // .btn {
+        //     font-size:120%;
+        //     padding: 3% 35%;
+        // }
+    }
+
+    .form-control::placeholder{
+        font-size: 100%;
+    }
+    
+    .img-kir-trafo{
+        max-height: 200px;
+        float: left;
+        margin-right: 5%;
+    }
+
+    
+    .img-inrush{
+        max-width: 40%;
+        margin-bottom: 2%;
+}
+
+.textSimulasiArus{
+    margin: 0% auto 1% auto;
+    p{
+        margin-bottom: 0.5%;
+    }
+}
+
+.img-frek{
+    max-width: 80%;
+    height: auto;
+    margin:2% 4% 2% 4%;
+}
+
+.img-inertia{
+    float: left;
+    max-width: 40%;
+    margin:2% 4% 2% 4%;
+}
+
+.img-kurva{
+    float: left;
+    max-width:40%;
+    margin:2% 4% 2% 4%;
+}
+
+
+}
