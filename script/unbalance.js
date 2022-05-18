@@ -46,7 +46,7 @@ $(document).ready(function(){
         
         var distance = max-min;
 
-        var nps = Math.round(distance / 3*10)/100;
+        var nps = Math.round(distance / 3*100)/100;
 
         //UNBALANCE
 
@@ -66,13 +66,15 @@ $(document).ready(function(){
 
         let ubRes = Math.round((maxUb * 100)*100/100);
 
+        let ubIn = Math.round((((maxUb * averageCur)/ratedR)*100)*100/100);
+
         //Relay
 
         var setRelay = $("#relay46").val();
 
         flagRelay = 0;
 
-        if ((nps > setRelay)||(ubRes>setRelay)){
+        if ((nps > setRelay)||(ubIn>setRelay)){
             flagRelay=1;
         } else {
             flagRelay=0;
@@ -84,6 +86,7 @@ $(document).ready(function(){
 
         $("#resultNps").text(nps);
         $("#resultUb").text(ubRes);
+        $("#resultUbIn").text(ubIn)
 
         if (flagRelay==1){
             $("#resultRelay46").text("TRIP");
