@@ -53,32 +53,42 @@
             <div class="row simulasiSudut">
                 <div class="col-justify-content-center col-md-4 col-sm-12" style="margin-left: 2%; margin-right:0; padding-right: 5%;">
                     <div class="row">
-                        <h3>Simulasi pengaruh perubahan sudut fasa</h3>
-                        <p>Sudut Fasa R</p>
-                        <input type="number" class="form-control" placeholder="sudut R" id="sudutR">
+                        <div class="col">
+                            <h3>Simulasi pengaruh perubahan sudut fasa</h3>
+                            <p>Sudut Fasa R</p>
+                            <input type="number" class="form-control" placeholder="sudut R" id="sudutR">
+                        </div>
                     </div>
                     <div class="row">
-                        <p>Sudut Fasa S</p>
-                        <input type="number" class="form-control" placeholder="sudut S" id="sudutS">
+                        <div class="col">
+                            <p>Sudut Fasa S</p>
+                            <input type="number" class="form-control" placeholder="sudut S" id="sudutS">
+                        </div>
                     </div>
                     <div class="row">
-                        <p>Sudut Fasa T</p>
-                        <input type="number" class="form-control" placeholder="sudut T" id="sudutT">
-                    </div>
+                        <div class="col">
+                            <p>Sudut Fasa T</p>
+                            <input type="number" class="form-control" placeholder="sudut T" id="sudutT">
+                        </div>
+                        </div>
                     <div class="row">
-                        <input class="btn btn-success btn-block" id ="draw" value="Draw">
+                        <div class="col">
+                            <input class="btn btn-success btn-block" id ="draw" value="Draw">
+                        </div>
                     </div>
                 </div>
+                
                 <div class="col-justify-content-center col-md-7 col-sm-12">
                     <div class="row">
-                    <div class="col">
-                        <h2>Grafik gelombang arus:</h2>
-                        <canvas id="canvasUb"></canvas>
+                        <div class="col">
+                            <h2>Grafik gelombang arus:</h2>
+                            <canvas id="canvasUb"></canvas>
+                        </div>
                     </div>
-                    </div>
+
                     <div class="row">
                         <div class="col-12">
-                            <h2>Arus pada fasa netral (Ir + Is + It) </h2>
+                            <h5>Arus pada fasa netral (Ir + Is + It) </h5>
                             <p><span id="resultArus">0</span>A</p>
                             <p>Jika ada arus pada fasa netral, beban dikatakan tidak seimbang dan dapat menimbulkan
                                 panas berlebih (overheat) pada kabel maupun peralatan
@@ -86,7 +96,6 @@
                             
                         </div>
                     </div>
-                    
                 </div>
                 
             </div>
