@@ -38,6 +38,14 @@ body {
   cursor: pointer;
 }
 
+.best {
+  display: none;
+}
+
+.quiz {
+  margin-top: 5%;
+}
+
 ul {
   list-style-type: none;
   margin: 0;

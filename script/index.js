@@ -10,3 +10,16 @@ mobileBtn.addEventListener('click', ()=> {
 mobileBtnExit.addEventListener('click', ()=> {
                 nav.classList.remove('menu-btn');
 })
+
+$(document).ready(function(){
+    $("#cek").click(function(){
+        slogan = $("#antamBest").val();
+        
+        if (slogan.toLowerCase() == "best"){
+            $("#container-quiz").addClass("best");
+            $("#main-container").removeClass("best");
+        } else {
+            $("#prompt-quiz").text("Jawaban salah, refresh halaman dan coba lagi.")
+        }
+    })
+})
