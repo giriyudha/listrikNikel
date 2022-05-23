@@ -23,3 +23,17 @@ $(document).ready(function(){
         }
     })
 })
+
+$(document).keypress(function(event){
+    var keycode = (event.keyCode ? event.keyCode : event.which);
+    if(keycode == '13'){
+        slogan = $("#antamBest").val();
+        
+        if (slogan.toLowerCase() == "best"){
+            $("#container-quiz").addClass("best");
+            $("#main-container").removeClass("best");
+        } else {
+            $("#prompt-quiz").text("Jawaban salah, refresh halaman dan coba lagi.")
+        };  
+    }
+  });
