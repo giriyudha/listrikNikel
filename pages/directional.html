@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>Teori Relay Directional</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+        <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">       
+        <link rel="stylesheet" href="../styles/main.css">
+    </head>
+    <body>
+        <div class="navbar">
+            <div class="container">
+                <img class="mobile-menu" id="mobile-cta" src="../images/menu.svg" alt="Navigation Menu">
+                <nav>
+                    <img class="mobile-menu-exit" id="mobile-cta-exit" src="../images/exit.svg" alt="Exit navigation menu" >
+                    <ul class="nav-menu">
+                        <li class="nav-item">
+                            <a class="nav-link nav-home" href="../index.html">Home</a>
+                          </li>
+                          <li class="nav-item">
+                            <a class="nav-link nav-contact" href="mailto:made.giri@mind.id">Contact</a>
+                          </li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="title-div col-justify-content-center">
+                    <p class="home-subtitle">MIND ID - ANTAM UBPNS</p>
+                    <h1 class="home-title"> Relay Directional (67)</h1>
+            </div>
+        </div> 
+
+        <div class="container intro-teori">
+            <div class="row">
+                <div class="col">
+                    <h2 class="title-diff">Relay Directional</h2>
+                    <p>Directional overcurrent relay adalah relay yang dapat mendeteksi gangguan arus lebih (overcurrent) dan dapat diatur untuk 
+                        hanya beroperasi jika gangguan datang dari arah tertentu
+                    </p>
+                </div>
+            </div>
+            <hr>
+            <div class="row">
+                <div class="col">
+                    <h2 class="title-kir-diff">Prinsip Kerja</h2>
+                    <div class="row">
+                        <div class="col-md-6 col-sm-12">
+                            <img src="../images/dir2.png" alt="" class="responsive-img">
+                        </div>
+                        <div class="col">
+                        <ol>
+                            <li>Pada gambar, bustie normally close menghubungkan 2 jalur utama (feed 1 dan feed 2)</li>
+                            <li>Breaker masing-masing feed terhubung dengan relay 51 dan 67</li>
+                            <li>Relay 51 hanya terhubung CT, sedangkan relay 67 terhubung CT dan PT</li>
+                            <li>Relay 67 akan trip jika arus dalam jumlah besar mengalir sesuai arah trip direction (lingkaran merah)</li>
+                            <li>Asumsikan terjadi fault pada feed 2</li>
+                        </ol>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col">
+                            <h4>Tanpa relay directional</h4>
+                            <ol>
+                                <li>Arus gangguan mengalir dari feed 1 dan dari sumber feed 2 menuju titik fault</li>
+                                <li>Jika tidak ada relat directional, walaupun breaker dari sisi sumber feed 2 (sebelum titik fault) open, arus dari feed 1 menuju titik fault akan terus mengalir </li>
+                                <li>Bustie memiliki relay 51, jika gangguan tidak cepat diisolasi, maka akan trip karena dialiri arus gangguan</li>
+                                <li>Jika bustie trip, maka beban feed 2 akan OFF</li>
+                            </ol>
+                        </div>
+                        <div class="col">
+                            <h4>Dengan relay directional</h4>
+                            <ol>
+                                <li>Arus gangguan mengalir dari feed 1 dan dari sumber feed 2 menuju titik fault</li>
+                                <li>Untuk memisahkan feed 1 dengan titik gangguan tanpa open bustie, digunakan relay directional</li>
+                                <li>Relay ini akan membaca arah aliran arus, dan open jika ada arus dalam jumlah besar yang mengalir menuju sumber</li>
+                                <li>Relay 52-M2 (feed 2) akan trip karena arah aliran arus dari feed 1 menuju titik gangguan sesuai dengan trip direction relay 67</li>
+                                <li>Relay 52-M1 (feed 1) tidak trip karena arah aliran arus berlawanan dengan trip direction</li>
+                                <li>Karena 52-M2 trip, feed 1 tidak lagi terhubung titik fault dan tidak ada arus gangguan yang mengalir melalui bustie. Bustie tidak trip,
+                                    beban Feed 2 dapat disuplai oleh feed 1
+                                </li>
+                            </ol>
+                        </div>
+                    </div>
+            </div>
+            
+            
+                
+           
+        
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+        <script src="../script/index.js" async defer></script>
+    </body>
+
+
+</html>

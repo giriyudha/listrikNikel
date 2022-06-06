@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>Teori Reverse Power</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+        <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">       
+        <link rel="stylesheet" href="../styles/main.css">
+    </head>
+    <body>
+        <div class="navbar">
+            <div class="container">
+                <img class="mobile-menu" id="mobile-cta" src="../images/menu.svg" alt="Navigation Menu">
+                <nav>
+                    <img class="mobile-menu-exit" id="mobile-cta-exit" src="../images/exit.svg" alt="Exit navigation menu" >
+                    <ul class="nav-menu">
+                        <li class="nav-item">
+                            <a class="nav-link nav-home" href="../index.html">Home</a>
+                          </li>
+                          <li class="nav-item">
+                            <a class="nav-link nav-contact" href="mailto:made.giri@mind.id">Contact</a>
+                          </li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="title-div col-justify-content-center">
+                    <p class="home-subtitle">MIND ID - ANTAM UBPNS</p>
+                    <h1 class="home-title"> Reverse Power (32)</h1>
+            </div>
+        </div> 
+
+        <div class="container intro-teori">
+            <div class="row">
+                <div class="col">
+                    <h2 class="title-diff">Reverse Power</h2>
+                    <p>Adalah fenomena yang terjadi saat arah daya aktif berbalik dari generator menuju beban menjadi dari beban menuju generator. Dalam 
+                        fenomena ini, generator sinkron berfungsi seperti mesin sinkron dan menyerap daya aktif
+                    </p>
+                </div>
+            </div>
+            <hr>
+            <div class="row">
+                <div class="col">
+                    <h2 class="title-kir-diff">Penyebab</h2>
+                    <ol>
+                        <li>Torsi prime mover / turbin lebih rendah dari torsi yang dibutuhkan untuk mencapai frekuensi 50Hz</li>
+                        <li>Torsi sudah sesuai namun drop secara tiba-tiba saat generator masih terhubung sistem. Pada kondisi ini,
+                            karena masih ada sisa putaran pada rotor dan sisa tegangan pada stator, maka stator akan menginduksi tegangan
+                            ke rotor sehingga generator berubah fungsi menjadi motor listrik
+                        </li>
+                    </ol>
+                    <img src="../images/reversepower1.png" alt="" class="responsive-img img-kir-trafo">
+                    <p>Perhatikan gambar. Karena kehilangan torsi turbin (loss of prime mover), arah daya aktif berbalik menjadi menuju generator. 
+                        Untuk mencegah kerusakan, maka GCB yang menjadi pembatas antara generator dan sistem akan trip
+                    </p>
+                    <p>Reverse power dapat menyebabkan akumulasi bahan bakar di ruang pembakaran yang tidak digunakan untuk memutar rotor sehingga terjadi
+                        ledakan. Selain itu, juga memungkinkan terjadi kerusakan gearbox pada turbin
+                    </p>
+                </div>
+            </div>
+            <hr>
+            <div class="row">
+                <div class="col">
+                    <h2 class="title-kir-diff">Menentukan Kapan Relay Reverse Power Bekerja (Contoh PLTU Unit 1)</h2>
+                    <ol>
+                        <li>Untuk mengetahui kapan relay reverse power bekerja, perlu diketahui daya yang dihasilkan generator 
+                            saat tidak ada beban di sistem
+                        </li>
+                        <li>Saat generator berputar tanpa beban, masih dibutuhkan daya untuk memutar turbin dan mengaktifkan komponen
+                            mekanikal internal generator
+                        </li>
+                        <li>Daya tersebut disebut turbine mechanical loss dan generator mechanical loss</li>
+                        <li>Pada PLTU unit 1, turbine mechanical loss sebesar 320kW dan generator mechanical loss 195kW</li>
+                        <li>Total daya yang dibutuhkan dalam kondisi tanpa beban adalah 320 + 195 = 515kW</li>
+                        <li>Jika relay membaca daya pada generator sebesar 515kW, maka bisa jadi generator berputar tanpa beban dan kondisi
+                            ini tidak berbahaya sehingga relay tidak trip
+                        </li>
+                        <li>Jika relay membaca daya lebih rendah dari 515kW, maka berarti turbin tidak diputar oleh generator melainkan oleh daya
+                            yang diserap dari sistem atau terjadi reverse power
+                        </li>
+                        <li>Berdasarkan penjelasan diatas, relay reverse power CFPP diset pada nilai lebih rendah dari 515kW</li>
+                        <li>Diperlukan perawatan turbin dan generator agar nilai losses tidak bertambah. Jika nilai losses berubah maka 
+                            relay reverse power harus disetting kembali
+                        </li>
+                    </ol>
+                </div>
+            </div>
+            
+                
+           
+        
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+        <script src="../script/index.js" async defer></script>
+    </body>
+
+
+</html>

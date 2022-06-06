@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>Sync Check</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+        <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">       
+        <link rel="stylesheet" href="../styles/main.css">
+    </head>
+    <body>
+        <div class="navbar">
+            <div class="container">
+                <img class="mobile-menu" id="mobile-cta" src="../images/menu.svg" alt="Navigation Menu">
+                <nav>
+                    <img class="mobile-menu-exit" id="mobile-cta-exit" src="../images/exit.svg" alt="Exit navigation menu" >
+                    <ul class="nav-menu">
+                        <li class="nav-item">
+                            <a class="nav-link nav-home" href="../index.html">Home</a>
+                          </li>
+                          <li class="nav-item">
+                            <a class="nav-link nav-contact" href="mailto:made.giri@mind.id">Contact</a>
+                          </li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="title-div col-justify-content-center">
+                    <p class="home-subtitle">MIND ID - ANTAM UBPNS</p>
+                    <h1 class="home-title"> Sync Check (25)</h1>
+            </div>
+        </div> 
+
+        <div class="container intro-teori">
+            <div class="row">
+                <div class="col">
+                    <h2 class="title-diff">Sync Check Relay</h2>
+                    <p>adalah relay yang berfungsi memastikan syarat sinkron antar line atau bus yang akan dihubungkan telah terpenuhi
+                    </p>
+                    <h4>Syarat yang harus terpenuhi untuk sinkron adalah:</h4>
+                    <ol>
+                        <li>Tegangan kedua line / bus yang akan dihubungkan sama</li>
+                        <li>Frekuensi kedua line / bus yang akan dihubungkan sama</li>
+                        <li>Posisi dan arah putaran sudut fasa  kedua line / bus yang akan dihubungkan sama</li>
+                    </ol>
+                    <p>Karena untuk mencapai kondisi seluruh parameter benar-benar sama sangat sulit tercapai dengan kondisi beban yang berfluktuasi,
+                        umumnya relay sync check memiliki toleransi perbedaan
+                    </p>
+                    <p>Jika relay sync check mendeteksi bahwa antara line atau bus yang dihubungkan memiliki perbedaan yang diluar toleransi, relay akan 
+                        melakukan locking sehingga breaker tidak bisa close
+                    </p>
+                    <p>Diluar 3 syarat, diatas kondisi dimana 1 bus bertegangan (live) dan bus lainnya padam (dead) juga termasuk kondisi yang diizinkan oleh
+                        relay sync check sehingga dalam kondisi ini breaker bus tie bisa close
+                    </p>
+                </div>
+            </div>
+            <hr>
+            <div class="row">
+                <div class="col">
+                    <h2 class="title-kir-diff">Prinsip Kerja</h2>
+                    <div class="row">
+                        <div class="col-sm-12">
+                            <img src="../images/sync.png" alt="" class="responsive-img">
+                        </div>
+                        <div class="col">
+                        <ol>
+                            <li>Tabel diatas adalah skema interlock Bustie Schneider yang digunakan pada CFPP 11kV, 
+                                CFPP 6.6kV, CFPP 30kV, FeNi 11kV, FeNi 30kV, dan Backbone 30kV
+                            </li>
+                            <li>Relay 25 membaca tegangan dan frekuensi dari bus referensi dan bus yang akan dihubungkan</li>
+                            <li>Baris pertama dan kedua, breaker bisa close jika salah satu bus bertegangan (live), dan bus lainnya padam (dead)</li>
+                            <li>Baris ketiga, jika kedua bus padam (dead), maka breaker tidak bisa close</li>
+                            <li>Baris keempat, jika kedua bus bertegangan (live), maka breaker bisa close selama syarat (requirement) terpenuhi</li>
+                            <li>Baris kelima, jika kedua bus bertegangan (live) namun syarat tidak terpenuhi (out of requirement), maka brekaer tidak bisa close</li>
+                            <li>Contoh kasus breaker BAB302 Backbone 30kV 22 April 2022:
+                                    <ol>
+                                        <li>Relay membandingkan parameter bus A Backbone atau bus Furnace 2 (bus referensi) dengan bus C Backbone atau 
+                                            bus Furance 4 (bus yang akan dihubungkan)
+                                        </li>
+                                        <li>Tegangan pada bus A adalah 30kV, sehingga tegangan pada bus C harus diatur agar sama nilainya (30kV)</li>
+                                        <li>Karena furnace 4 beroperasi dengan tegagan yang berfluktuasi, maka sulit untuk menyamakan tegagan bus A dan bus B</li>
+                                        <li>Selama tidak tercapai kesamaan parameter bus A dan bus B, BAB302 tidak bisa close</li>
+                                        <li>Agar BAB302 dapat close, maka solusi yang memungkinkan adalah dengan memadamkan bus C sehingga memenuhi syarat baris pertama tabel 
+                                            (Live 1 and Dead 2). Solusi ini lebih mudah dibanding berusaha menyamakan tegangan dengan kondisi furnace yang tidak stabil
+                                        </li>
+                                    </ol>
+                            </li>
+                        </ol>
+                        </div>
+                    </div>
+            </div>
+            
+            
+                
+           
+        
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+        <script src="../script/index.js" async defer></script>
+    </body>
+
+
+</html>

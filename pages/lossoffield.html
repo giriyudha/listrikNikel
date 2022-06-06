@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>Teori Loss of Field</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+        <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">       
+        <link rel="stylesheet" href="../styles/main.css">
+    </head>
+    <body>
+        <div class="navbar">
+            <div class="container">
+                <img class="mobile-menu" id="mobile-cta" src="../images/menu.svg" alt="Navigation Menu">
+                <nav>
+                    <img class="mobile-menu-exit" id="mobile-cta-exit" src="../images/exit.svg" alt="Exit navigation menu" >
+                    <ul class="nav-menu">
+                        <li class="nav-item">
+                            <a class="nav-link nav-home" href="../index.html">Home</a>
+                          </li>
+                          <li class="nav-item">
+                            <a class="nav-link nav-contact" href="mailto:made.giri@mind.id">Contact</a>
+                          </li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="title-div col-justify-content-center">
+                    <p class="home-subtitle">MIND ID - ANTAM UBPNS</p>
+                    <h1 class="home-title"> Loss of Field (40)</h1>
+            </div>
+        </div> 
+
+        <div class="container intro-teori">
+            <div class="row">
+                <div class="col">
+                    <h2 class="title-diff">Loss of Field / Loss of Excitation</h2>
+                    <p>Adalah fenomena dimana generator kehilangan eksistasi akibat kerusakan internal, sehingga tegangan tidak terbangkit 
+                        dan generator berfungsi sebagai motor induksi
+                    </p>
+                </div>
+            </div>
+            <hr>
+            <div class="row">
+                <div class="col">
+                    <h2 class="title-kir-diff">Konsep Loss of Field</h2>
+                    <ol>
+                        <li>Generator normalnya beroperasi dengan membangkitkan daya aktif dan daya reaktif, dengan kecepatan putar rotor sama dengan 
+                            frekuensi sistem atau grid
+                        </li>
+                        <li>Sistem pengontrol eksistasi (AVR atau exciter) pada generator mengatur besarnya tegangan terminal yang terbangkitkan</li>
+                        <li>Beban mengatur frekuensi sistem, dan governor mengatur frekuensi dan kecepatan putar generator</li>
+                        <li>Jika tegangan internal generator = tegangan sistem kelistrikan, tidak ada VAR yang dialirkan atau diterima oleh generator</li>
+                        <li>Jika tegangan internal generator naik karena ada energi yang disuplai kepada exciter, generator akan mengalirkan VAR</li>
+                        <li>Jika exciter tidak mampu menjaga tegangan internal generator agar tetap mengikuti tegangan sistem, tegangan internal generator akan turun, 
+                            sehingga generator akan menyerap VAR dari sistem
+                        </li>
+                        <li>Kondisi dimana exciter tidak mampu menjaga tegangan generator sesuai spesifikasi disebut kondisi hilang medan atau hilang eksistasi</li>
+                    </ol>
+                    <h3>Kondisi yang dapat menyebabkan hilangnya eksitasi:</h3>
+                    <ol>
+                        <li>
+                            Kerusakan dioda
+                        </li>
+                        <li>Short circuit belitan rotor</li>
+                        <li>Kerusakan AVR</li>
+                    </ol>
+                </div>
+            </div>
+            <hr>
+            <div class="row">
+                <div class="col">
+                    <h2 class="title-kir-diff">Jika Terjadi Hilang Eksitasi</h2>
+                    <ol>
+                        <li>Pada kondisi normal saat generator terhubung ke sistem, generator membangkitkan daya aktif dan daya reaktif dengan kecepatan putar rotor sama dengan frekuensi sistem. 
+                        </li>
+                        <li>Ketika terjadi kerusakan pada sistem eksitasi saat generator masih tetap terhubung dengan sistem, tidak lagi terjadi sinkron antara fluks rotor dan fluks stator, sehingga rotor berputar lebih cepat
+                        </li>
+                        <li>Generator akan menyerap W dan VAR dari sistem (menjadi motor induksi), sehingga terjadi perubahan torsi pada shaft dan timbul arus induksi yang tinggi</li>
+                        <li>Perubahan torsi yang ekstrim dan arus induksi yang tinggi dapat menyebabkan overheat, kerusakan rotor, dan kerusakan coupling</li>
+                        <li>Naikkan eksitasi hingga mencapai lagging MVAR</li>
+                        <li>Jika gagal, gangguan harus cepat diatasi dengan mematikan generator melalui relay 40 agar generator tidak beroperasi sebagai motor dalam waktu yang lama
+                        </li>
+                        <li>Setelah generator off, lakukan pemeriksaan AVR dan part yang terkait termasuk dioda
+                        </li>
+                        <li>Jika tidak ditemukan kerusakan, lakukan pemeriksaan terhadap belitan rotor dan pastikan tidak ada kerusakan akibat gangguan short circuit</li>
+                    </ol>
+                </div>
+            </div>
+            
+                
+           
+        
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+        <script src="../script/index.js" async defer></script>
+    </body>
+
+
+</html>
