@@ -19,7 +19,7 @@ $(document).ready(function(){
         var ratedS = parseInt($("#SS-46").val());
         var arusT = parseInt($("#AT-46").val());
         var ratedT = parseInt($("#ST-46").val());
-
+        
         //NPS
 
         let divided = {}; 

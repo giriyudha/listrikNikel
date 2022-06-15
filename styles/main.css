@@ -117,7 +117,7 @@ h3 {
 }
 
 .calculator-title .voltage51 {
-  padding-top: 20%;
+  padding-top: 5%;
 }
 
 .calculator-title .tr-side {
@@ -423,7 +423,7 @@ canvas {
     padding-top: 5%;
   }
   .calculator-title .voltage51 {
-    padding-top: 5%;
+    padding-top: 0%;
   }
   .calculator-title .tr-side {
     font-size: 100%;
