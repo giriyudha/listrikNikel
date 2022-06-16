@@ -29,7 +29,7 @@ $(document).keypress(function(event){
     if(keycode == '13'){
         slogan = $("#antamBest").val();
         
-        if (slogan.toLowerCase() == "best"){
+        if (slogan.toLowerCase() == "antam best"){
             $("#container-quiz").addClass("best");
             $("#main-container").removeClass("best");
         } else {
