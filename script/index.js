@@ -15,7 +15,7 @@ $(document).ready(function(){
     $("#cek").click(function(){
         slogan = $("#antamBest").val();
         
-        if (slogan.toLowerCase() == "best"){
+        if (slogan.toLowerCase() == "antam best"){
             $("#container-quiz").addClass("best");
             $("#main-container").removeClass("best");
         } else {
